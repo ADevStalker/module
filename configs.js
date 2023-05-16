@@ -13,4 +13,5 @@ export const schedule = {
   OFF: no_schedule,
 };
 export const rate = 10;
+export const intervalTime = 50000;
 export const status = 'ON';

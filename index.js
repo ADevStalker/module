@@ -2,7 +2,7 @@ import robot from 'robotjs';
 import moment from 'moment';
 import chalk from 'chalk';
 import { format, log, text } from './consts.js';
-import { schedule, rate, status } from './configs.js';
+import { schedule, rate, status, intervalTime } from './configs.js';
 
 var i = 0;
 
@@ -20,4 +20,4 @@ setInterval(() => {
     log(chalk.bgRed(text[i]));
   }
   i = (i + 1) % text.length;
-}, 50000);
+}, intervalTime);
