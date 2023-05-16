@@ -7,5 +7,10 @@ export const normal_schedule = [
   { beforeTime: '20:34:38', endTime: '23:59:59' },
 ];
 export const no_schedule = []; // OFF
-export const schedule = [full_schedule, normal_schedule, no_schedule];
-export const rate = 0.1;
+export const schedule = {
+  ON: full_schedule,
+  NORMAL: normal_schedule,
+  OFF: no_schedule,
+};
+export const rate = 10;
+export const status = 'ON';
