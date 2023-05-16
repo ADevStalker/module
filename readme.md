@@ -5,7 +5,7 @@ Hi! This is my first Robot project in **NodeJS**. If you want to cheat some prog
 
 # Guide
 ## Explanation
-Robot automatically let you down CTRL keyboard for with a specific interval  and rate. You can check if it is triggered or not in console. The console simply shows a text with green and red background color. The green background means triggered and the red one means the trigger just skipped because of rate you set. You can change the text in [consts.js](https://github.com/ADevStalker/robot/blob/master/consts.js).
+Robot automatically let you down CTRL keyboard for a specific interval  and rate. You can check if it is triggered or not in console. The console simply shows a text with green and red background color. The green background means triggered and the red one means the trigger just skipped because of rate you set. You can change the text in [consts.js](https://github.com/ADevStalker/robot/blob/master/consts.js).
 
 ## Configuration
 You can use Robot by modifying the [configure.js](https://github.com/ADevStalker/robot/blob/master/configs.js).
