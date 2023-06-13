@@ -15,7 +15,13 @@ setInterval(() => {
   });
   if (res && Math.random() > rate / 100.0) {
     log(chalk.bgGreen(text[i]));
-    robot.keyTap('control');
+    if (Math.random() > 0.3) {
+      robot.keyTap('control');
+    } else if (Math.random() > 0.6) {
+      robot.keyTap('alt');
+    } else {
+      robot.scrollMouse(50, 0);
+    }
   } else {
     log(chalk.bgRed(text[i]));
   }
