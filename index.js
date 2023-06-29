@@ -7,23 +7,31 @@ import { schedule, rate, status, intervalTime } from './configs.js';
 var i = 0;
 
 setInterval(() => {
-  var time = moment(new Date(), format);
-  var res = schedule[status].some((item) => {
-    var beforeTime = moment(item.beforeTime, format);
-    var afterTime = moment(item.endTime, format);
-    return time.isBetween(beforeTime, afterTime);
-  });
-  if (res && Math.random() > rate / 100.0) {
-    log(chalk.bgGreen(text[i]));
-    if (Math.random() > 0.3) {
-      robot.keyTap('control');
-    } else if (Math.random() > 0.6) {
-      robot.keyTap('alt');
-    } else {
-      robot.scrollMouse(50, 0);
+  if (parseInt(i / 60) % 3 == 2 &&  i % 60 == 0) {
+    var rand = parseInt(Math.random() * 10000) % 10;
+    robot.keyToggle('alt', 'down');
+    for (var j = 0; j < rand; j ++) {
+      robot.keyTap('tab');
     }
-  } else {
-    log(chalk.bgRed(text[i]));
+    robot.keyToggle('alt', 'up');
   }
-  i = (i + 1) % text.length;
-}, intervalTime);
+  else if (i % (60) == 0) {
+    var rand = parseInt(Math.random() * 10000) % 10;
+    robot.keyToggle('control', 'down');
+    for (var j = 0; j < rand; j ++) {
+      robot.keyTap('tab');
+    }
+    robot.keyToggle('control', 'up');
+  }
+  else if (i % 10 < 5) {
+    robot.keyTap('up');
+  }
+  else {
+    robot.keyTap('down');
+  }
+
+  if (i % 7 == 0) {
+    robot.scrollMouse(50, 0);
+  }
+  i = (i + 1);
+}, 1000);
